@@ -1,0 +1,17 @@
+<section class="todo">
+   <mat-checkbox
+   class ="margin"
+   color="primary"
+   [(ngModel)]="todo.isCompleted"
+
+   (change)="todoChange.emit()"
+   >
+   </mat-checkbox>
+   <!--- Titre  si elle est complited sera barrée-->
+   <span class="todo-title" [ngClass]="todo.isCompleted ? 'completed' : '' "> 
+     {{todo.title}} 
+   </span>
+   <button mat-button color="warn"(click)="deleteTodo.emit(todo.id)">
+        <mat-icon> delete</mat-icon>
+   </button>
+</section>
